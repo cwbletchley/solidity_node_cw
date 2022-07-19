@@ -34,6 +34,9 @@ npm install --save-dev hardhat
 npx hardhat compile
 ```
 
+## Receiving faucet to deploy the smart contract
+Access the faucet website to get some tRBTC and deploy the smart contract [click here](https://faucet.rsk.co/).
+
 ## Deploy smart contract
 ```
 npx hardhat run scripts/deploy.js --network rsktestnet
