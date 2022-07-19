@@ -29,7 +29,7 @@ solcjs --bin --abi src/Cars.sol -o bin
 npm install --save-dev hardhat
 ```
 
-## Run hardhat
+## Compile with hardhat
 ```
 npx hardhat compile
 ```
