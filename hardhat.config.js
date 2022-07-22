@@ -4,7 +4,7 @@ const fs = require('fs');
 
 require("@nomiclabs/hardhat-ethers");
 
-const TESTNET_GAS_MULT = 1.1;
+const TESTNET_GAS_MULT = 1.3;
 
 const mnemonic = fs.readFileSync('.testnet.seed-phrase').toString().trim();
 if (!mnemonic || mnemonic.split(' ').length !== 12) {
@@ -48,6 +48,7 @@ module.exports = {
       gasPrice: Math.floor(minimumGasPriceTestnet * TESTNET_GAS_MULT),
       gasMultiplier: TESTNET_GAS_MULT,
       accounts: [`0x${PRIVATE_KEY}`],
+      timeout: 200000,
     }
   },
 };
