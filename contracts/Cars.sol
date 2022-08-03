@@ -1,5 +1,4 @@
-// SPDX-License-Identifier:GPL-3.0
-
+// SPDX-License-Identifier: GPL-3.0
 pragma solidity ^0.8.0;
 
 import { ISuperHonk } from "./ISuperHonk.sol";
@@ -21,8 +20,10 @@ contract Cars {
     uint256 public numCars = 0;
     mapping(uint256 => Car) public cars;
 
-    constructor() {
-        superHonk = ISuperHonk(msg.sender);
+    constructor(
+        address superHonkAddress
+    ) {
+        superHonk = ISuperHonk(superHonkAddress);
     }
 
     function addCar(

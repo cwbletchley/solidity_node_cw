@@ -1,7 +1,8 @@
-require('dotenv').config();
-
 const fs = require('fs');
 
+require('dotenv').config();
+require('solidity-coverage');
+require('@nomiclabs/hardhat-waffle');
 require("@nomiclabs/hardhat-ethers");
 
 const TESTNET_GAS_MULT = 1.3;
@@ -33,7 +34,7 @@ const { API_URL, PRIVATE_KEY } = process.env;
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
   solidity: "0.8.9",
-  defaultNetwork: "rsktestnet",
+  defaultNetwork: "hardhat",
   paths: {
     sources: "./contracts",
     tests: "./test",
@@ -50,5 +51,8 @@ module.exports = {
       accounts: [`0x${PRIVATE_KEY}`],
       timeout: 200000,
     }
+  },
+  mocha: {
+    timeout: 6000000,
   },
 };

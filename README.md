@@ -29,15 +29,55 @@ solcjs --bin --abi src/Cars.sol -o bin
 npm install --save-dev hardhat
 ```
 
+# Test tools
+## Mocha
+- JS test framework
+- Asynchronous
+- Serial
+- Reporting
+
+## Hardhat 
+- Solidity development framework
+- Built in test framework (via mocha)
+- Wrapper to add smart contract specifics
+- Uses emulated blockchain (Hardhat VM)
+
+## Emulated Blockchains (Ganache)
+- EVM implementation
+- Transaction implementation
+- Lightweight & fast
+- Quick feedback loop
+
+## Test Helper Libraries
+- Mocha build in: `assert`
+- Chai
+- Waffle
+
+## Code coverate tool
+```
+npm install --save-dev --exact "solidity-coverage@0.7.21"
+npx hardhat coverage
+```
+- instrumentation
+- statements / branches / functions / lines
+- reports
+
+## Testing
+```
+npm run test
+```
+
+# Running
 ## Compile with hardhat
 ```
 npx hardhat compile
+npx hardhat console --network ...
 ```
-
-## Receiving faucet to deploy the smart contract
-Access the faucet website to get some tRBTC and deploy the smart contract [click here](https://faucet.rsk.co/).
-
+or 
+```
+npm run compile
+```
 ## Deploy smart contract
 ```
-npx hardhat run scripts/deploy.js --network rsktestnet
+npx hardhat run scripts/deploy.js --network ...
 ```

@@ -1,5 +1,4 @@
 // SPDX-License-Identifier: GPL-3.0
-
 pragma solidity ^0.8.0;
 
 interface ISuperHonk {
@@ -16,7 +15,8 @@ contract SuperHonk is ISuperHonk {
     function honk()
       public
     {
+        require(tx.origin != msg.sender, "EOA only");
         count += 1;
-        emit LoudSound(msg.sender);
+        emit LoudSound(tx.origin);
     }
 }
