@@ -62,12 +62,6 @@ npx hardhat coverage
 - statements / branches / functions / lines
 - reports
 
-## Testing
-```
-npm run test
-```
-
-# Running
 ## Compile with hardhat
 ```
 npx hardhat compile
@@ -77,6 +71,14 @@ or
 ```
 npm run compile
 ```
+
+## Testing
+```
+npm run test
+```
+
+# Running
+
 ## Deploy smart contract
 ```
 npx hardhat run scripts/deploy.js --network ...
