@@ -71,6 +71,12 @@ or
 ```
 npm run compile
 ```
+## .env
+Dont forget to create a .env file with:
+```
+API_URL="rpc endpoint"
+PRIVATE_KEY="your private key"
+```
 
 ## Testing
 ```
