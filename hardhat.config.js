@@ -34,7 +34,7 @@ const { API_URL, PRIVATE_KEY } = process.env;
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
   solidity: "0.8.9",
-  defaultNetwork: "hardhat",
+  defaultNetwork: "cw",
   paths: {
     sources: "./contracts",
     tests: "./test",
@@ -50,7 +50,13 @@ module.exports = {
       gasMultiplier: TESTNET_GAS_MULT,
       accounts: [`0x${PRIVATE_KEY}`],
       timeout: 200000,
-    }
+    },
+    cw: {
+      chainId: 2008,
+      url: API_URL, 
+      accounts: [`0x${PRIVATE_KEY}`],
+      timeout: 6000000,
+    },
   },
   mocha: {
     timeout: 6000000,
